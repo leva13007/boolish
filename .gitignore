@@ -15,3 +15,5 @@ yarn-error.log*
 # Jest cache
 jest/
 coverage/
+
+.DS_Store

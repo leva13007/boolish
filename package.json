@@ -1,6 +1,6 @@
 {
   "name": "boolish",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A utility library for Boolean operations in JavaScript.",
   "main": "dist/boolish.cjs.js",
   "module": "dist/boolish.esm.js",
