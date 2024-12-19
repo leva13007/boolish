@@ -25,22 +25,6 @@ console.log(Not(false)); // true
 ```
 
 ## API
-#### Not(value: any): boolean
-Description: Returns the logical negation of the provided value.
-Arguments:
-> value: Any type of value, which will be coerced to a Boolean.
-* Return Value: 
->true if value is falsy; otherwise, false.
-
-Example:
-
-```javascript
-Not(true);       // false
-Not('');         // true
-Not(0);          // true
-Not('hello');    // false
-```
-
 #### And(a: unknown, b: unknown): boolean
 Description: Returns true if both a and b are truthy, otherwise returns false.
 Arguments:
@@ -108,6 +92,58 @@ Example:
 AndValue(true, "Hello");     // "Hello" (both are truthy)
 AndValue(true, 0);           // true (0 is falsy)
 AndValue(0, "Hello");        // 0 (first falsy)
+```
+
+#### Not(value: any): boolean
+Description: Returns the logical negation of the provided value.
+Arguments:
+> value: Any type of value, which will be coerced to a Boolean.
+* Return Value: 
+>true if value is falsy; otherwise, false.
+
+Example:
+
+```javascript
+Not(true);       // false
+Not('');         // true
+Not(0);          // true
+Not('hello');    // false
+```
+
+#### Or(a: unknown, b: unknown): boolean
+Description: Returns true if at least one of a or b is truthy; otherwise, returns false.
+Arguments:
+>  a: Any value to evaluate.
+>  b: Any value to evaluate.
+
+Returns:
+> true if at least one of the values is truthy, otherwise false.
+
+Example:
+```javascript
+Or(true, false);      // true
+Or(0, 'hello');       // true
+Or(null, undefined);  // false
+Or(false, 0);         // false
+```
+
+#### OrValue<L, R>(a: L, b: R): L | R
+Description: Returns the first truthy value between a and b. If both are falsy, it returns the second value b.
+Arguments:
+>  a: Any value to evaluate.
+>  b: Any value to evaluate.
+
+Returns:
+>	The first truthy value if at least one is truthy.
+>	The second value b if both are falsy.
+
+Example:
+```javascript
+OrValue(true, 'hello');    // true
+OrValue(false, 'hello');   // 'hello'
+OrValue(0, null);          // null
+OrValue(undefined, NaN);   // NaN
+OrValue('', 42);           // 42
 ```
 
 ## TypeScript Support
